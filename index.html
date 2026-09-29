@@ -176,34 +176,48 @@
       aspect-ratio: 16/9;
       background: var(--dark);
       border: 1px solid rgba(139,123,184,0.16);
-      display: flex;
-      align-items: center;
-      justify-content: center;
       position: relative;
       overflow: hidden;
       transition: border-color 0.4s;
+      cursor: pointer;
     }
 
     .video-item:hover .video-frame {
       border-color: var(--purple);
     }
 
+    .video-frame video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
     .play-btn {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
       width: 62px; height: 62px;
       border-radius: 50%;
       border: 1px solid var(--purple);
+      background: rgba(13,13,15,0.45);
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--purple-soft);
       font-size: 18px;
       transition: all 0.4s;
+      pointer-events: none;
     }
 
     .video-item:hover .play-btn {
       background: var(--purple);
       color: var(--black);
-      transform: scale(1.08);
+      transform: translate(-50%, -50%) scale(1.08);
+    }
+
+    .video-frame.playing .play-btn {
+      opacity: 0;
     }
 
     .video-item h3 {
@@ -437,7 +451,7 @@
     <div class="scroll-hint">Scroll</div>
   </header>
 
-  <!-- ========== 01 VIDEO ========== -->
+   <!-- ========== 01 VIDEO ========== -->
   <section id="video">
     <div class="sec-head">
       <span class="sec-num">01</span>
@@ -447,35 +461,32 @@
     <div class="video-grid">
 
       <div class="video-item">
-        <a href="https://your-link" target="_blank" style="text-decoration:none;color:inherit;">
-          <div class="video-frame">
-            <div class="play-btn">▶</div>
-          </div>
-          <h3>Short Film — "Stillness"</h3>
-          <p>Directed &amp; edited · 2024</p>
-        </a>
+        <div class="video-frame" onclick="playVideo(this)">
+          <video preload="metadata" poster="Bakery.jpg">
+            <source src="Bakery.mp4" type="video/mp4">
+          </video>
+          <div class="play-btn">▶</div>
+        </div>
       </div>
 
       <div class="video-item">
-        <a href="https://your-link" target="_blank" style="text-decoration:none;color:inherit;">
-          <div class="video-frame">
-            <div class="play-btn">▶</div>
-          </div>
-          <h3>Brand Campaign — "Echo"</h3>
-          <p>Creative direction · 2024</p>
-        </a>
+        <div class="video-frame" onclick="playVideo(this)">
+          <video preload="metadata" poster="Uni.jpg">
+            <source src="Uni.mp4" type="video/mp4">
+          </video>
+          <div class="play-btn">▶</div>
+        </div>
       </div>
 
       <div class="video-item">
-        <a href="https://your-link" target="_blank" style="text-decoration:none;color:inherit;">
-          <div class="video-frame">
-            <div class="play-btn">▶</div>
-          </div>
-          <h3>Music Video — "Violet Hour"</h3>
-          <p>Cinematography · 2023</p>
-        </a>
+        <div class="video-frame" onclick="playVideo(this)">
+          <video preload="metadata" poster="Practice.jpg">
+            <source src="Practice.mp4" type="video/mp4">
+          </video>
+          <div class="play-btn">▶</div>
+        </div>
       </div>
-
+      
     </div>
   </section>
 
@@ -572,6 +583,18 @@
       <p style="margin-top:10px;">© 2026 DENG Zi, Ivonne</p>
     </div>
   </footer>
-
+ <script>
+    function playVideo(frame) {
+      const video = frame.querySelector('video');
+      if (video.paused) {
+        video.controls = true;
+        video.play();
+        frame.classList.add('playing');
+      } else {
+        video.pause();
+        frame.classList.remove('playing');
+      }
+    }
+  </script>
 </body>
 </html>
