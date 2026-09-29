@@ -280,7 +280,27 @@
       .social-card { padding: 16px; }
       .social-card h3 { font-size: 14px; }
     }
+    /* ===== 04 PERSONAL ===== */
+    .personal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
 
+    .personal-card {
+      aspect-ratio: 3 / 4;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media (max-width: 720px) {
+      .personal-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+    }
     /* ===== 03 WRITING ===== */
     .writing-list {
       display: grid;
@@ -523,25 +543,24 @@
     </div>
   </section>
 
-  <!-- ========== 04 PERSONAL ========== -->
+   <!-- ========== 04 PERSONAL ========== -->
   <section id="personal">
     <div class="sec-head">
       <span class="sec-num">04</span>
       <h2>Personal</h2>
     </div>
 
-    <div class="social-grid">
+    <div class="personal-grid">
 
-      <a class="social-card" href="#" target="_blank" style="background-image:url('Se.jpg');"></a>
-      <a class="social-card" href="#" target="_blank" style="background-image:url('Sheng.jpg');"></a>
-      <a class="social-card" href="#" target="_blank" style="background-image:url('Xiang.jpg');"></a>
-      <a class="social-card" href="#" target="_blank" style="background-image:url('Wei.jpg');"></a>
-      <a class="social-card" href="#" target="_blank" style="background-image:url('Chu.jpg');"></a>
-      <a class="social-card" href="#" target="_blank" style="background-image:url('Fa.jpg');"></a>
+      <div class="personal-card" style="background-image:url('Se.jpg');"></div>
+      <div class="personal-card" style="background-image:url('Sheng.jpg');"></div>
+      <div class="personal-card" style="background-image:url('Xiang.jpg');"></div>
+      <div class="personal-card" style="background-image:url('Wei.jpg');"></div>
+      <div class="personal-card" style="background-image:url('Chu.jpg');"></div>
+      <div class="personal-card" style="background-image:url('Fa.jpg');"></div>
 
     </div>
   </section>
-
   <!-- ========== FOOTER / CONTACT ========== -->
   <footer id="contact">
     <div class="big">
