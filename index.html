@@ -268,26 +268,37 @@
     }
 
     /* ===== 03 WRITING ===== */
-    .writing-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2px;
-      background: rgba(139,123,184,0.12);
-    }
-
     .writing-item {
       background: var(--black);
+      background-size: cover;
+      background-position: center;
       padding: 44px 34px;
       text-decoration: none;
       color: var(--white);
-      transition: background 0.4s;
+      transition: transform 0.4s, filter 0.4s;
       display: flex;
       flex-direction: column;
       min-height: 260px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .writing-item:hover {
-      background: var(--dark);
+    .writing-item::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(13,13,15,0.72);
+      transition: background 0.4s;
+      z-index: 0;
+    }
+
+    .writing-item:hover::before {
+      background: rgba(13,13,15,0.55);
+    }
+
+    .writing-item > * {
+      position: relative;
+      z-index: 1;
     }
 
     .writing-item .date {
@@ -495,7 +506,7 @@
         <h3>Smokers Ignore Anti-smoking Rules</h3>
         <p>Smokers turn a blind eye to no smoking sign in Shenzhen.</p>
         <div class="read">Read →</div>
-</a>
+      </a>
 
       <a class="writing-item" href="https://varsity.com.cuhk.edu.hk/index.php/2025/11/surrogacy-a-bright-future-or-a-regretful-decision/" target="_blank">
         <div class="date">Nov 2025</div>
@@ -503,7 +514,14 @@
         <p>Desperate old couples in China are hiring surrogate mothers to give birth to babies.</p>
         <div class="read">Read →</div>
       </a>
-
+      
+      <a class="writing-item" href="https://radii.co/article/what-does-it-feel-like-when-you-step-into-a-collective-dream" target="_blank">
+        <div class="date">Nov 2025</div>
+        <h3>What Does it Feel Like When You Step Into a Collective Dream?</h3>
+        <p>"dreamedcore" is an exhibition in Hong Kong that relives nostalgia through a surreal, multi-artist landscape, curated by Serakai Studio's GOLD Salon.</p>
+        <div class="read">Read →</div>
+      </a>
+      
     </div>
   </section>
 
