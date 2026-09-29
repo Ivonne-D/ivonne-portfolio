@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name — Portfolio</title>
+  <title>DENG Zi, Ivonne — Portfolio</title>
   <style>
     /* ===== RESET ===== */
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -14,7 +14,7 @@
       --gray: #6b6b75;
       --light: #d8d8de;
       --white: #fafafa;
-      --purple: #8b7bb8;      /* 紫灰主色 */
+      --purple: #8b7bb8;
       --purple-soft: #a99bc9;
       --purple-deep: #5e5278;
     }
@@ -218,7 +218,7 @@
       margin-top: 6px;
     }
 
-    /* ===== 02 SOCIAL MEDIA ===== */
+    /* ===== 02 SOCIAL MEDIA / 04 PERSONAL ===== */
     .social-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -235,6 +235,7 @@
       display: block;
       transition: transform 0.4s;
     }
+
     .social-card::before {
       content: "";
       position: absolute;
@@ -281,6 +282,13 @@
     }
 
     /* ===== 03 WRITING ===== */
+    .writing-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2px;
+      background: rgba(139,123,184,0.12);
+    }
+
     .writing-item {
       background: var(--black);
       background-size: cover;
@@ -396,6 +404,7 @@
       <li><a href="#video">Video</a></li>
       <li><a href="#social">Social</a></li>
       <li><a href="#writing">Writing</a></li>
+      <li><a href="#personal">Personal</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -403,8 +412,8 @@
   <!-- ========== HERO ========== -->
   <header class="hero">
     <div class="label">Portfolio — 2026</div>
-<h1>Stories in<br><span>motion</span> &amp; words.</h1>
-<p>Journalism &amp; Communication student at CUHK. A collection of video work, social media content, and written pieces.</p>
+    <h1>Stories in<br><span>motion</span> &amp; words.</h1>
+    <p>Journalism &amp; Communication student at CUHK. A collection of video work, social media content, and written pieces.</p>
     <div class="scroll-hint">Scroll</div>
   </header>
 
@@ -473,6 +482,7 @@
 
     </div>
   </section>
+
   <!-- ========== 03 WRITING ========== -->
   <section id="writing">
     <div class="sec-head">
@@ -502,27 +512,46 @@
         <p>Desperate old couples in China are hiring surrogate mothers to give birth to babies.</p>
         <div class="read">Read →</div>
       </a>
-      
+
       <a class="writing-item" href="https://radii.co/article/what-does-it-feel-like-when-you-step-into-a-collective-dream" target="_blank" style="background-image:url('Dream.jpg');">
         <div class="date">Jun 2026</div>
         <h3>What Does it Feel Like When You Step Into a Collective Dream?</h3>
         <p>"dreamedcore" is an exhibition in Hong Kong that relives nostalgia through a surreal, multi-artist landscape, curated by Serakai Studio's GOLD Salon.</p>
         <div class="read">Read →</div>
       </a>
-      
+
+    </div>
+  </section>
+
+  <!-- ========== 04 PERSONAL ========== -->
+  <section id="personal">
+    <div class="sec-head">
+      <span class="sec-num">04</span>
+      <h2>Personal</h2>
+    </div>
+
+    <div class="social-grid">
+
+      <a class="social-card" href="#" target="_blank" style="background-image:url('Se.jpg');"></a>
+      <a class="social-card" href="#" target="_blank" style="background-image:url('Sheng.jpg');"></a>
+      <a class="social-card" href="#" target="_blank" style="background-image:url('Xiang.jpg');"></a>
+      <a class="social-card" href="#" target="_blank" style="background-image:url('Wei.jpg');"></a>
+      <a class="social-card" href="#" target="_blank" style="background-image:url('Chu.jpg');"></a>
+      <a class="social-card" href="#" target="_blank" style="background-image:url('Fa.jpg');"></a>
+
     </div>
   </section>
 
   <!-- ========== FOOTER / CONTACT ========== -->
   <footer id="contact">
-   <div class="big">
-  Let's make<br>something <span>honest</span>.
-</div>
-<div class="meta">
-  <p><a href="mailto:dengzi411@gmail.com">dengzi411@gmail.com</a></p>
-  <p>Based in Shenzhen · Available worldwide</p>
-  <p style="margin-top:10px;">© 2026 DENG Zi, Ivonne</p>
-</div>
+    <div class="big">
+      Let's make<br>something <span>honest</span>.
+    </div>
+    <div class="meta">
+      <p><a href="mailto:dengzi411@gmail.com">dengzi411@gmail.com</a></p>
+      <p>Based in Shenzhen · Available worldwide</p>
+      <p style="margin-top:10px;">© 2026 DENG Zi, Ivonne</p>
+    </div>
   </footer>
 
 </body>
